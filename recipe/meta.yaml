@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "1.25.4" %}
+{% set version = "1.25.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,16 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fabae2bee4abfa7bdd09125b6bbdcdda81f946c7b16e3ccc6bb2d821ef6488f3
+  sha256: 7a2eb6d8173fdf408e505e6f7d497ac0b777388719542be9e49a0efd477a50c6
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - docker-compose = compose.cli.main:main
   # pypiwin32 dependency not yet available on conda-forge
   # dependencies not satisfiable for python v3.5
-  skip: True  # [win or py < 36]
+  skip: true  # [win or py < 36]
 
 requirements:
   host:
@@ -58,7 +58,7 @@ about:
   license: Apache v2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Compose is a tool for defining and running multi-container Docker applications.'
+  summary: Compose is a tool for defining and running multi-container Docker applications.
   description: |
     Compose is a tool for defining and running multi-container Docker
     applications. With Compose, you use a Compose file to configure your
