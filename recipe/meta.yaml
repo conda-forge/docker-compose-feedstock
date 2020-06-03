@@ -29,6 +29,7 @@ requirements:
     - cached-property
     - certifi
     - chardet
+    - distro
     - docker-py
     - docker-pycreds
     - dockerpty
