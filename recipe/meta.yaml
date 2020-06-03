@@ -42,6 +42,7 @@ requirements:
     - jsonschema
     # - pypiwin32   # [win]
     - pysocks
+    - python-dotenv
     - pyyaml
     - requests
     - pysocks
