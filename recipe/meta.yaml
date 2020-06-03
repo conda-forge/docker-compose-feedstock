@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "1.25.5" %}
+{% set version = "1.26.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7a2eb6d8173fdf408e505e6f7d497ac0b777388719542be9e49a0efd477a50c6
+  sha256: 7e836102d139aca667d6af53f0f4d942c9459ec24d6dd4f0203d74359b0fd311
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - docker-compose = compose.cli.main:main
@@ -29,6 +29,7 @@ requirements:
     - cached-property
     - certifi
     - chardet
+    - distro
     - docker-py
     - docker-pycreds
     - dockerpty
@@ -41,6 +42,7 @@ requirements:
     - jsonschema
     # - pypiwin32   # [win]
     - pysocks
+    - python-dotenv
     - pyyaml
     - requests
     - pysocks
