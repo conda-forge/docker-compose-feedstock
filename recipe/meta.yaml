@@ -10,7 +10,7 @@ source:
   sha256: 5a5690f24c27d4b43dcbe6b3fae91ba680713208e99ee863352b3bae37bcaa83
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - docker-compose = compose.cli.main:main
