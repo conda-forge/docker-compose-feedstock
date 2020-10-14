@@ -57,7 +57,7 @@ test:
 
 about:
   home: https://www.docker.com/
-  license: Apache v2.0
+  license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   summary: Compose is a tool for defining and running multi-container Docker applications.
