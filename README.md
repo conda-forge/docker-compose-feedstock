@@ -3,7 +3,7 @@ About docker-compose
 
 Home: https://www.docker.com/
 
-Package license: Apache v2.0
+Package license: Apache-2.0
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/docker-compose-feedstock/blob/master/LICENSE.txt)
 
