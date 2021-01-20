@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "1.27.4" %}
+{% set version = "1.28.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5a5690f24c27d4b43dcbe6b3fae91ba680713208e99ee863352b3bae37bcaa83
+  sha256: 947888fe9377b48c260d59b6511ba205655c6beb45a4b70fbce28f753aacf75a
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   entry_points:
     - docker-compose = compose.cli.main:main
