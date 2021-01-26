@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "1.28.0" %}
+{% set version = "1.28.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 947888fe9377b48c260d59b6511ba205655c6beb45a4b70fbce28f753aacf75a
+  sha256: 2f148b590414915d029dad7551f4cdf0b03a774dc9baa674480217236d260cc1
 
 build:
   number: 0
