@@ -16,9 +16,12 @@ build:
     - docker-compose = compose.cli.main:main
   # pypiwin32 dependency not yet available on conda-forge
   # dependencies not satisfiable for python v3.5
-  skip: true  # [win or py < 36]
+  skip: true  # [win]
 
 requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - pip
