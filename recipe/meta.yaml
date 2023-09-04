@@ -12,8 +12,8 @@ source:
 build:
   number: 0
   script:
-    - export BUILD_FLAGS="-buildvcs=false"  # [unix]
-    - export DESTDIR="${PREFIX}/bin"        # [unix]
+    - export BUILD_FLAGS="-buildvcs=false"                     # [unix]
+    - export DESTDIR="${PREFIX}/lib/docker/cli-plugins"        # [unix]
     - make
 
 requirements:
