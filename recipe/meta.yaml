@@ -11,7 +11,10 @@ source:
 
 build:
   number: 0
-  script: make
+  script:
+    - export BUILD_FLAGS="-buildvcs=false"  # [unix]
+    - export DESTDIR="${PREFIX}/bin"        # [unix]
+    - make
 
 requirements:
   build:
