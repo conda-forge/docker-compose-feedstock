@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "2.21.0" %}
+{% set version = "2.26.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,13 @@ package:
 
 source:
   url: https://github.com/docker/compose/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0014b23382a50c90f91849e491500568366052882e22011822ca2d8a3b2976f2
+  sha256: b42bb6b118b664db8a37a160b4b3782712199fedd35731a2314b5762b2700d3f
 
 build:
   number: 0
   script:
     - export BUILD_FLAGS="-buildvcs=false"                         # [unix]
-    - export DESTDIR="${PREFIX}/libexec/docker/cli-plugins"        # [unix]
     - set BUILD_FLAGS=-buildvcs=false                              # [win]
-    - set DESTDIR=%PREFIX%\libexec\docker\cli-plugins              # [win]
     - make
 
 requirements:
@@ -33,12 +31,14 @@ about:
   dev_url: https://github.com/docker/compose
   license: Apache-2.0
   license_file: LICENSE
-  summary: Compose is a tool for defining and running multi-container Docker applications.
+  summary:  Define and run multi-container applications with Docker 
   description: |
-    Compose is a tool for defining and running multi-container Docker
-    applications. With Compose, you use a Compose file to configure your
-    application's services. Then, using a single command, you create and
-    start all the services from your configuration.
+    Docker Compose is a tool for running multi-container applications
+    on Docker defined using the Compose file format.
+    A Compose file is used to define how one or more containers that
+    make up your application are configured. Once you have a Compose
+    file, you can create and start your application with a single command:
+    docker compose up.
 
 extra:
   recipe-maintainers:
