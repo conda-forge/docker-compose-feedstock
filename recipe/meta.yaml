@@ -12,9 +12,7 @@ source:
 build:
   number: 0
   script:
-    - export BUILD_FLAGS="-buildvcs=false"                         # [unix]
-    - set BUILD_FLAGS=-buildvcs=false                              # [win]
-    - make
+    - VERSION='v{{ version}}' make
     - go-licenses save --save_path licenses .
 
 requirements:
