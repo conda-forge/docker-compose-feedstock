@@ -21,9 +21,10 @@ build:
 
 requirements:
   build:
-    - {{ stdlib('c') }}
-    - {{ compiler('c') }}
-    - {{ compiler('go-cgo') }}
+    - {{ stdlib('c') }}           # [osx]
+    - {{ compiler('c') }}         # [osx]
+    - {{ compiler('go-cgo') }}    # [osx]
+    - {{ compiler('go-nocgo') }}  # [not osx]
     - go-licenses
 
 test:
