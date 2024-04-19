@@ -12,12 +12,16 @@ source:
 build:
   number: 0
   script:
-    - GO111MODULE=on go build -ldflags "-X github.com/docker/compose/v2/internal.Version=${PKG_VERSION}" -o $PREFIX/bin/docker-compose ./cmd
+    - pushd cmd
+    - go build -ldflags "-s -w -X github.com/docker/compose/v2/internal.Version=${PKG_VERSION}" -o $PREFIX/bin/docker-compose
+    - popd
     - go-licenses save --save_path licenses .
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
+    - {{ compiler('go-cgo') }}
     - go-licenses
 
 test:
