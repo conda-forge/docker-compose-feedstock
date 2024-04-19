@@ -14,6 +14,7 @@ build:
   script:
     - pushd cmd
     - go install -v .  # [win]
+    - move %PREFIX%\bin\cmd.exe %LIBRARY_PREFIX%\bin\docker-compose.exe  # [win]
     - go build -ldflags "-s -w -X github.com/docker/compose/v2/internal.Version=${PKG_VERSION}" -o $PREFIX/bin/docker-compose  # [unix]
     - go-licenses save --save_path ../licenses .
     # Clear out cache to avoid file not removable warnings
