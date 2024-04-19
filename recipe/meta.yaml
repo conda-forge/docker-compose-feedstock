@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "2.26.0" %}
+{% set version = "2.26.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/docker/compose/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b42bb6b118b664db8a37a160b4b3782712199fedd35731a2314b5762b2700d3f
+  sha256: 081ad40241f8e144cad088a65e6fd0ec588e3d36931e5baabb3dc5ab068ceb60
 
 build:
   number: 0
@@ -37,10 +37,10 @@ about:
   home: https://www.docker.com/
   dev_url: https://github.com/docker/compose
   license: Apache-2.0
-  license_file: 
+  license_file:
     - LICENSE
     - licenses/
-  summary:  Define and run multi-container applications with Docker 
+  summary: Define and run multi-container applications with Docker
   description: |
     Docker Compose is a tool for running multi-container applications
     on Docker defined using the Compose file format.
