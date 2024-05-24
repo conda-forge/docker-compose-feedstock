@@ -1,5 +1,5 @@
 {% set name = "docker-compose" %}
-{% set version = "2.27.0" %}
+{% set version = "2.27.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/docker/compose/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 29b2232d1609dff03db74188a7944c85ba8b612f47a7e39938a43db8fb7d7067
+  sha256: 5abf8de3a413894c2ed061812d68c8d8eb4e255b25bf38e2ac58d3ba0546a218
 
 build:
   number: 0
