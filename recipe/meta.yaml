@@ -10,7 +10,7 @@ source:
   sha256: 2716c31c36860d2cbe5750122894c9bca430afa14a0da9a0a2c4c19a21146bd3
 
 build:
-  number: 0
+  number: 1
   script:
     - pushd cmd
     - go install -v .  # [win]
