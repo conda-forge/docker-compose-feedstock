@@ -17,9 +17,7 @@ build:
   script:
     - pushd cmd
     - if: win
-      then: go install -v .
-    - if: win
-      then: move %PREFIX%\bin\cmd.exe %LIBRARY_PREFIX%\bin\docker-compose.exe
+      then: go build -v -o %LIBRARY_BIN%\docker-compose.exe -ldflags="-s"
     - if: unix
       then: go build -ldflags "-s -w -X github.com/docker/compose/v2/internal.Version=${PKG_VERSION}" -o $PREFIX/bin/docker-compose
     - go-licenses save --save_path ../licenses .
