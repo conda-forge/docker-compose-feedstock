@@ -18,7 +18,6 @@ make up your application are configured. Once you have a Compose
 file, you can create and start your application with a single command:
 docker compose up.
 
-
 Current build status
 ====================
 
