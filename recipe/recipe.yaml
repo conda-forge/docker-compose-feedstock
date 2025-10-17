@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: docker-compose
-  version: "2.39.2"
+  version: "2.40.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/docker/compose/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 3d082806391381310ba509a106dafa01c435b86b15818de541afe9d6c68a1cee
+  sha256: 1f6a066533f25ae61fac7b196c030d10693b8669f21f3798e738d70cea158853
 
 build:
   number: 0
