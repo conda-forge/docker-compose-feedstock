@@ -9,8 +9,11 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://github.com/docker/compose/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 1f6a066533f25ae61fac7b196c030d10693b8669f21f3798e738d70cea158853
+  - url: https://github.com/docker/compose/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 1f6a066533f25ae61fac7b196c030d10693b8669f21f3798e738d70cea158853
+  - url: https://raw.githubusercontent.com/in-toto/in-toto-golang/c9edf0cbb1e6e4daf536fc126bca99aa3cc88f9a/LICENSE
+    sha256: b5c26c8a2ad6dd7cac6646e470a32ee42d23c36124caac4e66c989b6545b2a44
+    file_name: LICENSE-intoto
 
 build:
   number: 0
@@ -20,7 +23,7 @@ build:
       then: go build -v -o %LIBRARY_BIN%\docker-compose.exe -ldflags="-s"
     - if: unix
       then: go build -ldflags "-s -w -X github.com/docker/compose/v2/internal.Version=${PKG_VERSION}" -o $PREFIX/bin/docker-compose
-    - go-licenses save --save_path ../licenses .
+    - go-licenses save --save_path ../licenses --ignore github.com/in-toto/in-toto-golang .
     # Clear out cache to avoid file not removable warnings
     - if: unix
       then: chmod -R u+w $(go env GOPATH) && rm -r $(go env GOPATH)
@@ -44,6 +47,7 @@ about:
   license: Apache-2.0
   license_file:
     - LICENSE
+    - LICENSE-intoto
     - licenses/
   summary: Define and run multi-container applications with Docker
   description: |
