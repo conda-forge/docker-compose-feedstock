@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: docker-compose
-  version: "5.0.0"
+  version: "5.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/docker/compose/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 2c50b805cbb35c7257b54e739aa71c5d7aa5da3a8b2da5c5bb8f145c3bf02e96
+    sha256: e48ebd8c71bb805c0b97b9705ac03513e9a0c872fa73cb0525141d0f49148b5e
   - url: https://raw.githubusercontent.com/in-toto/in-toto-golang/c9edf0cbb1e6e4daf536fc126bca99aa3cc88f9a/LICENSE
     sha256: b5c26c8a2ad6dd7cac6646e470a32ee42d23c36124caac4e66c989b6545b2a44
     file_name: LICENSE-intoto
